@@ -1,81 +1,51 @@
 # Codeharu Portfolio
 
-A personal portfolio built with **React + Vite + TypeScript + Tailwind CSS** and **Framer Motion**.
-It tracks websites, games, and certificates, with scroll-driven motion throughout.
+A personal portfolio showcasing my projects, technical skills, certificates, and growth as an IT student and aspiring software developer.
 
-## Run it locally
+Built with **React, Vite, TypeScript, Tailwind CSS, and Framer Motion**.
+
+## Run It Locally
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm run dev
 ```
+
+Open the local URL shown in your terminal, usually `http://localhost:5173`.
 
 Other commands:
 
 ```bash
-npm run build      # type-check + production build into dist/
-npm run preview    # serve the production build locally
+npm run build
+npm run preview
 ```
 
-> Requires Node 18 or newer (Node 20 recommended).
+Requires Node.js 18 or newer. Node.js 20 is recommended.
 
-## Project structure
+## Updating Your Content
 
-```
-codeharu-portfolio/
-├── .github/workflows/deploy.yml   # builds and deploys to GitHub Pages on push to main
-├── public/                        # static files (favicon, resume PDF, certificate images)
-├── src/
-│   ├── components/
-│   │   ├── layout/                # Navbar, Footer
-│   │   ├── sections/              # Hero, About, Skills, Projects, Certificates, Contact
-│   │   └── ui/                    # reusable pieces: TiltCard, Reveal, MagneticButton, ...
-│   ├── data/                      # <-- edit these to change your content
-│   │   ├── profile.ts
-│   │   ├── skills.ts
-│   │   ├── projects.ts
-│   │   └── certificates.ts
-│   ├── hooks/                     # useTypewriter, useActiveSection, usePrefersReducedMotion
-│   ├── lib/                       # small helpers
-│   ├── types/index.ts             # shared TypeScript types
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css                  # Tailwind entry + global styles
-├── index.html
-├── tailwind.config.ts
-├── vite.config.ts
-└── tsconfig*.json
-```
+Edit the files in `src/data/` to update your portfolio:
 
-## Updating your content
+- `profile.ts` — name, tagline, bio, location, email, and social links.
+- `skills.ts` — skill groups and items.
+- `projects.ts` — portfolio websites and games.
+- `certificates.ts` — certificates and achievements.
 
-You only need to edit files in `src/data/`:
-
-- **`profile.ts`**: name, tagline, bio, location, email, social links.
-- **`skills.ts`**: skill groups and items.
-- **`projects.ts`**: one object per website or game (`category: "website" | "game"`).
-- **`certificates.ts`**: one object per certificate.
-
-Dates use the `YYYY-MM` format, and lists sort newest-first automatically.
-Use `"#"` for any link you don't have yet; the button is hidden until you add a real URL.
-
-To add images, drop them in `public/` and reference them like `"/certificates/my-cert.png"`.
+Add images to the `public/` folder and reference them in your code.
 
 ## Deploying to GitHub Pages
 
-The repo is `code1haru-ctrl/codeharu-ctrl.github.io`, so the site is served at
-`https://code1haru-ctrl.github.io/codeharu-ctrl.github.io/`, and `vite.config.ts` sets that
-as the production `base` path.
+Repository: `code1haru-ctrl/codeharu-ctrl.github.io`
 
-1. Push this project to the `main` branch of the repo.
-2. In the repo, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-3. Every push to `main` now builds and deploys automatically (see the **Actions** tab).
+Website: https://code1haru-ctrl.github.io/
 
-**Want the clean address `https://code1haru-ctrl.github.io/`?** GitHub only serves that from a repo
-named exactly `code1haru-ctrl.github.io`. Rename the repo, then change `base` in
-`vite.config.ts` to `"/"`.
+1. Push your project to the `main` branch.
+2. Open your repository's **Settings → Pages**.
+3. Set the deployment source to **GitHub Actions**.
+4. Check the **Actions** tab to monitor deployment.
 
-## Motion and accessibility
+The repository is named `code1haru-ctrl.github.io`, so this is a personal GitHub Pages site. Ensure `vite.config.ts` uses `/` as its production base path for this URL.
 
-Animations respect the visitor's "reduce motion" system setting: the cursor glow, tilt, and
-magnetic effects switch off, and CSS animations are shortened.
+## Motion and Accessibility
+
+Animations respect visitors' reduced-motion preferences where supported, helping make the portfolio more accessible.
