@@ -9,7 +9,7 @@ export default function Skills() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {skillGroups.map((group, i) => (
-          <Reveal key={group.title} delay={i * 0.1}>
+          <Reveal key={group.title} delay={i * 0.1} className="h-full">
             <div className="h-full rounded-md border border-white/10 bg-white/[0.02] p-6">
               <h3 className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-500">
                 {group.title}
