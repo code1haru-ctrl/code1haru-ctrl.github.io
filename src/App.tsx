@@ -6,16 +6,12 @@ import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
 import Certificates from "./components/sections/Certificates";
 import Contact from "./components/sections/Contact";
-import AuroraBackground from "./components/ui/AuroraBackground";
-import CursorGlow from "./components/ui/CursorGlow";
 import ScrollProgress from "./components/ui/ScrollProgress";
 
 export default function App() {
   return (
-    <div className="grain relative">
+    <div className="relative">
       <ScrollProgress />
-      <AuroraBackground />
-      <CursorGlow />
       <Navbar />
       <main className="relative z-10">
         <Hero />

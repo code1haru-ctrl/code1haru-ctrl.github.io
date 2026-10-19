@@ -1,4 +1,4 @@
-export type ProjectCategory = "website" | "game";
+export type ProjectCategory = "website" | "game" | "program" | "pwa";
 
 export interface Profile {
   name: string;
@@ -28,8 +28,8 @@ export interface Project {
   id: string;
   title: string;
   category: ProjectCategory;
-  /** Format: YYYY-MM */
-  date: string;
+  /** Format: YYYY-MM. Omit if unknown. */
+  date?: string;
   description: string;
   tags: string[];
   /** Live site / playable build. Use "#" if there isn't one yet. */

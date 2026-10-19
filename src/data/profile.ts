@@ -7,7 +7,7 @@ export const profile: Profile = {
   role: "Developer & Builder",
   tagline: "I turn ideas into websites and games, and keep receipts of everything I ship.",
   roles: ["websites", "games", "interfaces", "experiments"],
-  location: "Philippines",
+  location: "",
   bio: [
     "I'm a builder who likes finishing things. This portfolio is my running record of what I've made and learned, from small websites to full games and the certificates that mark each milestone.",
     "I care about interfaces that are easy for anyone to navigate, with motion that helps people understand what's happening instead of getting in the way.",

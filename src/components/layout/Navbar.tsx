@@ -4,11 +4,11 @@ import { useActiveSection } from "../../hooks/useActiveSection";
 import { profile } from "../../data/profile";
 
 const NAV_ITEMS = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "certificates", label: "Certificates" },
-  { id: "contact", label: "Contact" },
+  { id: "about", label: "about" },
+  { id: "skills", label: "tech stack" },
+  { id: "projects", label: "projects" },
+  { id: "certificates", label: "certificates" },
+  { id: "contact", label: "contact" },
 ];
 
 const SECTION_IDS = ["home", ...NAV_ITEMS.map((item) => item.id)];
@@ -18,39 +18,28 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-4 z-50 flex justify-center px-4"
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0B0B0D]/80 backdrop-blur">
       <nav
         aria-label="Primary"
-        className="glass relative flex w-full max-w-3xl items-center justify-between rounded-full px-5 py-3"
+        className="mx-auto flex w-full max-w-3xl items-center justify-between px-6 py-4"
       >
-        <a href="#home" className="font-display text-lg font-semibold text-white">
+        <a href="#home" className="font-display text-lg font-medium lowercase text-white">
           {profile.name.toLowerCase()}
-          <span className="gradient-text">.</span>
         </a>
 
         {/* desktop links */}
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-6 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
-                  active === item.id ? "text-white" : "text-slate-400 hover:text-white"
+                className={`font-mono text-[11px] uppercase tracking-[0.2em] transition-colors ${
+                  active === item.id
+                    ? "border-b border-white pb-0.5 text-white"
+                    : "border-b border-transparent pb-0.5 text-slate-500 hover:text-white"
                 }`}
               >
-                {active === item.id && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full bg-white/10"
-                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                  />
-                )}
-                <span className="relative">{item.label}</span>
+                {item.label}
               </a>
             </li>
           ))}
@@ -64,31 +53,27 @@ export default function Navbar() {
           onClick={() => setOpen((v) => !v)}
           className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
         >
-          <motion.span
-            animate={open ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-            className="h-0.5 w-5 bg-white"
-          />
-          <motion.span
-            animate={open ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-            className="h-0.5 w-5 bg-white"
-          />
+          <span className="h-px w-5 bg-white" />
+          <span className="h-px w-5 bg-white" />
         </button>
 
         <AnimatePresence>
           {open && (
             <motion.ul
-              initial={{ opacity: 0, y: -10, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.96 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="glass absolute left-0 right-0 top-full mt-3 flex flex-col gap-1 rounded-3xl p-3 md:hidden"
+              className="absolute left-0 right-0 top-full flex flex-col gap-4 border-b border-white/10 bg-[#0B0B0D] px-6 py-6 md:hidden"
             >
               {NAV_ITEMS.map((item) => (
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
                     onClick={() => setOpen(false)}
-                    className="block rounded-2xl px-4 py-3 text-slate-200 hover:bg-white/10"
+                    className={`font-mono text-[11px] uppercase tracking-[0.2em] transition-colors ${
+                      active === item.id ? "text-white" : "text-slate-500 hover:text-white"
+                    }`}
                   >
                     {item.label}
                   </a>
@@ -98,6 +83,6 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
   );
 }

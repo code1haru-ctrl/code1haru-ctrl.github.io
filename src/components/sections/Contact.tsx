@@ -1,48 +1,44 @@
-import { motion } from "framer-motion";
 import { profile } from "../../data/profile";
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
-import MagneticButton from "../ui/MagneticButton";
 
 export default function Contact() {
   return (
     <section id="contact" className="section-wrap">
-      <SectionHeading index="05" eyebrow="Contact" title="Let's talk" />
+      <SectionHeading title="contact" />
 
       <Reveal>
-        <div className="glass relative overflow-hidden rounded-3xl p-10 text-center md:p-16">
-          <motion.div
-            aria-hidden
-            animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="pointer-events-none absolute -top-1/2 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full opacity-30"
-            style={{
-              background:
-                "conic-gradient(from 0deg, transparent, #8b5cf6, transparent, #22d3ee, transparent)",
-              filter: "blur(80px)",
-            }}
-          />
-          <div className="relative">
-            <p className="mx-auto max-w-lg text-lg text-slate-300">
-              Have an idea, a project, or just want to say hi? My inbox is open.
-            </p>
+        <div>
+          <p className="max-w-lg text-base text-slate-300">
+            Have an idea, a project, or just want to say hi? My inbox is open.
+          </p>
+          <a
+            href={`mailto:${profile.email}`}
+            className="mt-6 inline-block font-display text-xl font-medium text-white underline decoration-white/30 underline-offset-8 transition-colors hover:decoration-white sm:text-2xl"
+          >
+            {profile.email}
+          </a>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href={`mailto:${profile.email}`}
-              className="gradient-text mt-6 inline-block font-display text-2xl font-semibold md:text-4xl"
+              className="rounded-md border border-white/10 px-4 py-2 text-sm text-slate-300 transition-colors hover:border-white/30 hover:text-white"
             >
-              {profile.email}
+              send an email
             </a>
-
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <MagneticButton href={`mailto:${profile.email}`}>Send an email</MagneticButton>
-              {profile.socials
-                .filter((s) => s.label !== "Email")
-                .map((social) => (
-                  <MagneticButton key={social.label} href={social.href} variant="ghost" external>
-                    {social.label} ↗
-                  </MagneticButton>
-                ))}
-            </div>
+            {profile.socials
+              .filter((s) => s.label !== "Email")
+              .map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md border border-white/10 px-4 py-2 text-sm text-slate-300 transition-colors hover:border-white/30 hover:text-white"
+                >
+                  {social.label.toLowerCase()} ↗
+                </a>
+              ))}
           </div>
         </div>
       </Reveal>

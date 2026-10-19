@@ -4,64 +4,42 @@
 
 @layer base {
   html {
-    background: #05060b;
+    background: #0b0b0d;
     color-scheme: dark;
   }
 
   body {
-    @apply bg-ink-950 font-sans text-slate-300 antialiased;
+    @apply bg-[#0B0B0D] font-sans text-slate-300 antialiased;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(139, 92, 246, 0.45);
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;
   }
 
   :focus-visible {
-    outline: 2px solid #22d3ee;
+    outline: 2px solid #fff;
     outline-offset: 3px;
     border-radius: 6px;
   }
 
-  /* slim scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #05060b;
+    background: #0b0b0d;
   }
   ::-webkit-scrollbar-thumb {
-    background: #252a3d;
+    background: #333333;
     border-radius: 999px;
   }
 }
 
 @layer components {
-  .gradient-text {
-    @apply animate-gradientShift bg-clip-text text-transparent;
-    background-image: linear-gradient(110deg, #8b5cf6, #22d3ee, #f472b6, #8b5cf6);
-    background-size: 250% 100%;
-  }
-
-  .glass {
-    @apply border border-white/10 bg-white/[0.03] backdrop-blur-md;
-  }
-
   .section-wrap {
-    @apply mx-auto w-full max-w-6xl px-6 py-28 md:px-10;
+    @apply mx-auto w-full max-w-3xl px-6 py-20;
   }
-}
-
-/* subtle film grain over everything */
-.grain::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
 /* Respect reduced-motion preferences everywhere */

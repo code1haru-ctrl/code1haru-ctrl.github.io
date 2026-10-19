@@ -1,49 +1,46 @@
 import type { Project } from "../types";
 
-// ✏️ Add one object per website or game. The page sorts by date automatically.
-// These are sample entries. Replace them with your real work.
 export const projects: Project[] = [
   {
     id: "portfolio-site",
-    title: "Personal Portfolio",
+    title: "Website Portfolio",
     category: "website",
     date: "2026-10",
     description:
-      "This site: a React + TypeScript portfolio with scroll-driven motion, built to track everything I make.",
-    tags: ["React", "TypeScript", "Tailwind", "Framer Motion"],
+      "The site you're on: a React and TypeScript portfolio with scroll-driven motion that tracks my projects, games, and certificates.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
     liveUrl: "#",
-    repoUrl: "#",
+    repoUrl: "https://github.com/code1haru-ctrl/codeharu-ctrl.github.io",
   },
   {
-    id: "sample-platformer",
-    title: "Sample 2D Platformer",
-    category: "game",
-    date: "2026-07",
-    description:
-      "A short platformer with three levels, made to learn collision handling and simple state machines.",
-    tags: ["Unity", "C#"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    id: "sample-landing-page",
-    title: "Sample Landing Page",
+    id: "brother-bean-pos",
+    title: "Brother Bean POS",
     category: "website",
-    date: "2026-03",
+    date: "2026-05",
     description:
-      "A responsive single-page site for a fictional small business, focused on shipping something end to end.",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "A cashier and admin system for a café, built by a team of 3. Cashiers enter customer orders, print receipts, and use the other tools needed to run a counter smoothly. The owner can see how much the café earns per day, week, and month, view analytics, and browse stored copies of receipts.",
+    tags: ["JavaScript", "Firebase"],
     liveUrl: "#",
     repoUrl: "#",
   },
   {
-    id: "sample-puzzle-game",
-    title: "Sample Puzzle Game",
+    id: "car-game",
+    title: "Basic Car Game",
     category: "game",
-    date: "2025-12",
+    date: "2026-05",
     description:
-      "A small browser puzzle game exploring grid logic, score tracking, and game feel.",
-    tags: ["JavaScript", "Canvas"],
+      "A basic car game built in Java by a team of 4 for a school project. It runs on an Apache server and isn't published online.",
+    tags: ["Java", "Apache"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    id: "currency-converter",
+    title: "World Currency Converter",
+    category: "program",
+    description:
+      "A currency converter covering currencies from around the world, built in C++ by a team of 4 for a school project. It runs only in the terminal and isn't published.",
+    tags: ["C++"],
     liveUrl: "#",
     repoUrl: "#",
   },
