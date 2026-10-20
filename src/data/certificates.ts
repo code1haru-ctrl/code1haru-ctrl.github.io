@@ -5,9 +5,9 @@ import type { Certificate } from "../types";
 export const certificates: Certificate[] = [
   {
     id: "sample-web-dev",
-    title: "Web Development Fundamentals",
-    issuer: "Sample Academy",
-    date: "2026-02",
+    title: "JavaScript Essential 1",
+    issuer: "DICT-ITU DTC Initiative",
+    date: "2026-06",
     credentialUrl: "#",
   },
   {

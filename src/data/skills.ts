@@ -4,6 +4,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
     items: ["JavaScript", "TypeScript", "TSX", "React", "C++", "Tailwind CSS", "Vite", "Prettier"],
+    tooltips: { TSX: "TypeScript + JSX syntax for React UI" },
   },
   {
     title: "Backend & Databases",
@@ -16,6 +17,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Developer Tools",
-    items: ["Git", "GitHub", "VS Code", "Antigravity IDE", "Discord"],
+    items: ["Git", "GitHub", "VS Code", "Antigravity IDE", "Discord", "Apache NetBeans"],
   },
 ];

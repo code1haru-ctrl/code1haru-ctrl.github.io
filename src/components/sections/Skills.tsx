@@ -15,14 +15,25 @@ export default function Skills() {
                 {group.title}
               </h3>
               <ul className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-1.5 text-sm text-slate-300"
-                  >
-                    {item}
-                  </li>
-                ))}
+                {group.items.map((item) => {
+                  const tooltip = group.tooltips?.[item];
+                  return (
+                    <li
+                      key={item}
+                      className="group relative rounded-md border border-white/10 bg-white/[0.02] px-3 py-1.5 text-sm text-slate-300"
+                    >
+                      {item}
+                      {tooltip && (
+                        <span
+                          role="tooltip"
+                          className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md border border-white/10 bg-[#0B0B0D] px-2.5 py-1.5 font-mono text-[11px] text-slate-400 opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
+                        >
+                          {tooltip}
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </Reveal>

@@ -22,6 +22,8 @@ export interface SocialLink {
 export interface SkillGroup {
   title: string;
   items: string[];
+  /** Hover tooltip text keyed by skill name. */
+  tooltips?: Record<string, string>;
 }
 
 export interface Project {

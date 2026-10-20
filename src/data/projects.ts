@@ -19,7 +19,7 @@ export const projects: Project[] = [
     date: "2026-05",
     description:
       "A cashier and admin system for a café, built by a team of 3. Cashiers enter customer orders, print receipts, and use the other tools needed to run a counter smoothly. The owner can see how much the café earns per day, week, and month, view analytics, and browse stored copies of receipts.",
-    tags: ["JavaScript", "Firebase"],
+    tags: ["HTML", "CSS", "JavaScript", "Firebase"],
     liveUrl: "#",
     repoUrl: "#",
   },
